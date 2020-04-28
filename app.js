@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
-const port = 'www.gaijin.party';
-const io = require('socket.io')(port);
+const port = 3000;
+const io = require('socket.io')('www.gaijin.party');
 
 // app.get('/', (req, res) => res.send('Thomas Lennon Croskery'));
 
