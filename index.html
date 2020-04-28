@@ -126,17 +126,9 @@
 
 
     <!-- <script src="script.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script>
-
-        io.on('connection', (socket) => {
-            socket.on('chat message', (msg) => {
-                io.emit('chat message', msg);
-            });
-        });
-        
         $(function () {
             var socket = io();
             $('form').submit(function(e){
