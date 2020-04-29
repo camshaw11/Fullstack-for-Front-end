@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
-const port = 3000;
-const io = require('socket.io')('www.gaijin.party');
+var http = require('http').createServer(app);
+// const port = 3000;
+const io = require('socket.io')(app);
 
 // app.get('/', (req, res) => res.send('Thomas Lennon Croskery'));
 
@@ -15,4 +16,4 @@ io.on('connection', (socket) => {
     });
 });
 
-app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
+// app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
