@@ -126,23 +126,26 @@
 
 
     <!-- <script src="script.js"></script> -->
-    <script src="/socket.io/socket.io.js"></script>
+    <script src="http://www.gaijin.party:3000/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script>
-        $(function () {
-            var socket = io();
+        
+        let input = document.querySelector('input');
+
+        function socketFn() {
+            const socket = io();
             $('form').submit(function(e){
                 e.preventDefault(); // prevents page reloading
-                socket.emit('chat message', $('#m').val());
-                $('#m').val('');
+                socket.emit('chat message', input.value);
+                input.value = "";
                 return false;
             });
-            
             socket.on('chat message', function(msg){
                 $('#messages').append($('<li>').text(msg));
             });
-        });
+        };
 
+        socketFn();
     </script>
 </body>
 </html>
