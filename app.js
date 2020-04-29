@@ -4,11 +4,11 @@ const app = express();
 // const port = 3000;
 // const io = require('socket.io')(http);
 
-// app.get('/', (req, res) => res.send('Thomas Lennon Croskery'));
+app.get('/', (req, res) => res.send('Thomas Lennon Croskery'));
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
-});
+// app.get('/', (req, res) => {
+//     res.sendFile(__dirname + '/index.html');
+// });
   
 // io.on('connection', (socket) => {
 //     socket.on('chat message', (msg) => {
